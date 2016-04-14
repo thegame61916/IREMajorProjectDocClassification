@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <title>Wikipedia Document Classification</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,37 +28,7 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+   
 
     <!-- Page Content -->
     <div class="container">
@@ -71,149 +41,107 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1>Blog Post Title</h1>
+                <h1>Wikipedia Document Classification</h1>
 
                 <!-- Author -->
                 <p class="lead">
-                    by <a href="#">Start Bootstrap</a>
+                    by <a href="#">Mohit Sharma, Vijjini Anvesh Rao, T.V.Ravi Teja</a>
                 </p>
 
                 <hr>
 
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-
                 <hr>
 
-                <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                <p class="lead"> Aim </p>
+                <p>Given a Wikipedia Document our aim is to say the Categories it may belong to, based on a Training data in which each Document is tagged to multiple Categories,  The Categories we considered are the following: </p>
+                    <b>Wiki</b><br/>
+                   <b> Art</b><br/>
+                    <b>Reference</b><br/>
+                   <b> People</b><br/>
+                   <b> Culture</b><br/>
+                   <b> Books</b><br/>
+                   <b> Design</b><br/>
+                   <b> Politics</b><br/>
+                   <b> Technology</b><br/>
+                    <b>Psychology</b><br/>
+                    <b>Interesting</b><br/>
+                    <b>Wikipedia</b><br/>
+                    <b>Research</b><br/>
+                    <b>Religion</b><br/>
+                    <b>Music</b><br/>
+                    <b>Math</b><br/>
+                    <b>Development</b><br/>
+                    <b>Theory</b><br/>
+                    <b>Philosophy</b><br/>
+                   <b> Article</b><br/>
+                    <b>Language</b><br/>
+                    <b>Science</b><br/>
+                    <b>Programming</b><br/>
+                    <b>History</b><br/>
+                    <b>Software</b><br/></br>
+                <p class="lead"> Dataset </p>
+                <p>We used Wiki10+ data set from following link:</br>
+                    <a href="http://nlp.uned.es/social-tagging/wiki10+/">http://nlp.uned.es/social-tagging/wiki10+/</a></br></br>
+                The data set contains following two files:</br>
+                1) wiki10+_tag-data.tar.gz  (3,6 MB): Contains all the tag data for the Wikipedia articles.</br>
+                2) wiki10+_documents.tar.bz2  (271 MB): Content for all the Wikipedia articles on the dataset in HTML format. We extracted the text from HTML to run different experiments.</br></br>
+                As we only consider top 25 documents, we removed those documents who don't have even one of these top 25 categories</br>
+                This dataset is made up by 20,764 unique URLs, all of them with their corresponding social tags. All of them are English Wikipedia articles with at least 10 annotations on Delicious. Therefore, the tag information for each of these Wikipedia articles as well as the text content can be found in this dataset.</br></br></p>
+                <p class="lead"> Approach 1:  LDA or Latent Dirichlet Allocation </p>
+                <p>We can use LDA to classify documents in different tags. We know that LDA divides the given corpus in fixed no. of topics and can also provide which topics are contained in a document and with what probability. For the experiments performed  using LDA, we don’t need to worry about internal implementation of LDA. We used gensim’s implementation of LDA. To use the library, we just need to know few points about input and output format.</p>
+                </br>
+                <b> During Learning phase</b></br></br>
+                <b>INPUT:</b>
+                </br><p>We provide all the wiki documents in single XML file zipped in bz2 format.</p>
+                 <b>LEARNT MODEL:</b>
+                </br><p>Word distribution for each topic eg: “topic #0: 0.009*river + 0.008*lake + 0.006*island + 0.005*mountain + 
+                0.004*area + 0.004*park + 0.004*antarctic + 0.004*south + 0.004*mountains + 0.004*dam”</p>
+                 <b> During Testing phase</b></br></br>
+                  <b>INPUT:</b>
+                </br><p>We provide the document to be classified in bag of words form to the learnt model</p>
+                <b>OUTPUT:</b>
+                </br><p>Topic distribution for a the text eg: “[(34, 0.023705742561150572), (60, 0.017830310671555303), (62, 0.023999239610385081), (83,0.029439444128473557), (87, 0.028172479800878891), (90, 0.1207424163376625), (116,0.022904510579689157)]”  represents the probabilities of the doc to fall under topics like 34,60,62….</p></br>
+           
+
+
+                <p class="lead"> Major challenge in classification:  </p>
+                <p>It seems to be fairly simple to classify a document in different topics as we can see in output of testing phase. But  our aim is to classify the document under different tags like “politics, science” etc. and not under topic numbers. </p>
+                 <p class="lead"> Possible Solutions: </p>
+                <p>Clearly we need some way to map all the topics learnt by LDA to the most suitable tags. If we are able to do this then we simply test the unknown text against the model learnt by LDA and then report the tag corresponding to the topic given by LDA in output. We tried two different solutions to map topics to the tags: </p>
+                <p>1). As each topic of LDA is represented by distribution of words. We can create a query by combining those words and find best matched document on tf-idf basis for that query. That particular document must be the best match for that topic. So we can map the topic to tag of best matched document.</p>
+                <p>2) We can find probability distribution of topics for all the documents. Represent each document as a topic vector. Now find the closest document or the most similar document for each topic. Map the topic to the tag of that particular document.</p>
+
+                <b>Approach 1: </b><br>
+                <p>We can specify the major steps of to implement this approach as follows:</p>
+                <p>1) Divide the documents in training and test data with 4000 docs in test data.</p>
+                <p>2) On training data run gensim's LDA and save the learnt model. Set the number of topics as 300.</p>
+                <p>3) Save all the topics in a file and convert them to queries.</p>
+                <b>  Example topic:</b><br>
+                <p>2016-04-06 00:05:52,466 : INFO : topic #299 (0.003): 0.014*insurance + 0.009*scott + 0.007*samurai + 0.007*hipster + 0.006*forecasting + 0.006*fbi + 0.006*imf +     0.005*skeptical + 0.005*bass + 0.005*hidden</p>
+                <b>Query corresponding to above topic  #299:</b><br>
+                <p> 299:insurance scott samurai hipster forecasting fbi imf skeptical bass hidden</p>
+                <p>4) For each query, retrieve the most relevant document in training set on tf-idf basis and create topic to doc Id mapping.</p>
+                 <b>         Example:</b><br>
+                <p>   299 : cae3757420fbc4008bbfe492ab0d4cb5</p>
 
                 <hr>
 
                 <!-- Blog Comments -->
 
                 <!-- Comments Form -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
                 <hr>
 
                 <!-- Posted Comments -->
 
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
-
-            </div>
+               
+                
 
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-                <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                    <!-- /.input-group -->
-                </div>
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Blog Categories</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
-
-            </div>
-
+            
         </div>
         <!-- /.row -->
 
@@ -223,7 +151,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
             <!-- /.row -->
