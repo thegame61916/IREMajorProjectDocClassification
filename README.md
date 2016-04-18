@@ -21,7 +21,7 @@ and tag-data.xml
 11. Run "python ldaTest.py" to check the accuracy of learnt model.
 12. To test any random text. Write it in file "test" and run "python testRandom.py".
 
-#for "OTHER MODELS"
+#for other models
 place docdict.pickle and tag-data.xml in the folder other models
 
 	
@@ -47,8 +47,8 @@ vector_source="tf_idf_vectors.txt"
 ###Classification
 then to run the classifier, open python shell in the features folder:
 
-  >>>from classifiers import *  
-  >>>print accuracy
+  > >>from classifiers import *  
+  > >>print accuracy
 
 #other links
 
