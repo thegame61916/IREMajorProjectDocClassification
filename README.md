@@ -25,7 +25,7 @@ and tag-data.xml
 place docdict.pickle and tag-data.xml in the folder other models
 
 	
-#running the vector based models
+##running the vector based models
 run cross_validation.py to create a dump "data.pickle" with the data in following manner
 [alllabels,testkeys,testdocs,testlabels,trainkeys,traindocs,trainlabels] 
 alllabels is list/set of all labels considerd, current code only top 25 considered
@@ -47,8 +47,8 @@ vector_source="tf_idf_vectors.txt"
 ###Classification
 then to run the classifier, open python shell in the features folder:
 
-+>>>from classifiers import *
-+>>>print accuracy
+  >>>from classifiers import *  
+  >>>print accuracy
 
 #other links
 
