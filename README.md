@@ -44,3 +44,5 @@ Youtube video link: https://www.youtube.com/watch?v=N4DimsHMu4g&feature=youtu.be
 Presentation slideshare link: http://www.slideshare.net/MohitSharma634/wikipedia-document-classification-60966086
 
 Dropbox link to ppt,report and video https://www.dropbox.com/sh/6dfbi9l568fn5hw/AABknCo7PfnnUlzOkyRVciAVa?dl=0
+
+Tags :Wikipedia, Document Classification, Word2Vec, Doc2Vec, LDA, Topic Modeling, tf-idf, Information Retrieval Extraction, Machine Learning, gensim, Latent Dirichlet allocation, SVM, Natural Language Processing, Stochastic Gradient Design, wiki, Information Retrieval and Extraction Course', IIIT-H, Major Project, Pattern Recognition, sklearn
