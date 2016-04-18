@@ -32,8 +32,8 @@ vector_source="tf_idf_vectors.txt"
 
 then to run the classifier, open python shell in the features folder:
 
-from classifiers import *
-print accuracy
+>>>from classifiers import *
+>>>print accuracy
 
 #other links
 
