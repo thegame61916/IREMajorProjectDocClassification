@@ -1,10 +1,11 @@
 #for data
-http://nlp.uned.es/social-tagging/wiki10+/ is where downloaded the tags and documents, but we used an xml extracted verion of it, uploaded here:
+uploaded here:
 https://drive.google.com/file/d/0B6UrE1zfRs68Rm9kM2ZyOFBkbEk/view?usp=sharing
 has a "docdict.pickle" stores a dictnary from document_ids to documents
 and the original tag-data.xml
 
 #for "OTHER MODELS"
+place docdict.pickle and tag-data.xml in the folder other models
 prereq: gensim, numpy, slkearn.
 	for word2vec : word2vec model to be stored as "model.en", in features/word2vec_extraction
 	
