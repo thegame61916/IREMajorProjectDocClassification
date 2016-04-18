@@ -34,7 +34,7 @@ keys is the list of hashes, i.e.  the document names
 docs are list of documents in the order in which keys are stored
 labels are list of set of labels (each document is multi-labeled) in the same order as corresponding keys
 
-#
+###Feature Extraction
 once data.pickle is ready, generate vectors, by running either 
 features/tf_idf_features.py     
 features/word2vec_extraction/word2vec_features.py       
@@ -44,10 +44,11 @@ once feature extraction is done
 edit the variable in this file, for example for tf-idf
 vector_source="tf_idf_vectors.txt"
 
+###Classification
 then to run the classifier, open python shell in the features folder:
 
->>>from classifiers import *
->>>print accuracy
++>>>from classifiers import *
++>>>print accuracy
 
 #other links
 
